@@ -67,6 +67,37 @@ All of this data is stored in PostgreSQL and accessed using raw SQL queries.
 
 ---
 
+## Database Schema
+
+The application uses a PostgreSQL database with the following tables:
+
+### products
+- **id**: Primary key
+- **name**: Name of the product
+- **category**: Category to which the product belongs
+- **price**: Product price
+- **created_at**: Timestamp when the product was added
+
+### inventory
+- **id**: Primary key
+- **product_id**: Foreign key referencing `products(id)`
+- **stock_level**: Number of units currently in stock
+- **updated_at**: Timestamp of the last update to the stock level
+
+### sales
+- **id**: Primary key
+- **product_id**: Foreign key referencing `products(id)`
+- **quantity**: Number of units sold
+- **total_amount**: Total amount for the transaction
+- **sale_date**: Date and time of the sale
+
+### migration_versions
+- **id**: Primary key
+- **name**: Unique name of the SQL script or migration step
+- **applied_at**: Timestamp when the migration was applied
+
+This structure enables effective tracking of product availability, stock levels, and historical sales performance.
+
 ## Notes
 
 - On every start, the app checks if tables and data already exist before re-inserting
