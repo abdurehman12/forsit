@@ -105,7 +105,3 @@ This structure enables effective tracking of product availability, stock levels,
 - You can modify or extend this setup easily to add authentication, analytics, or admin dashboards
 
 ---
-
-## Contribution
-
-This is a foundational project and can be extended in various directions. If you find a bug or want to improve something, feel free to fork, suggest changes, or open a pull request.
